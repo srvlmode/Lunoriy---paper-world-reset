@@ -17,16 +17,6 @@ Requirements
 
     ~/minecraft
 
-Configuration
-
-The following variables can be adjusted in the script:
-
-  SERVER_DIR="$HOME/minecraft"
-  JAR_NAME="paper.jar"
-  JAVA_ARGS="-Xms2G -Xmx4G"
-
-Worlds Removed During a Reset
-
 The following world directories will be deleted when a world reset is requested:
 
     world
@@ -38,7 +28,7 @@ The following world directories will be deleted when a world reset is requested:
 Usage
 Start the Server
 
-chmod +x run-loop.sh
-./run-loop.sh
+     chmod +x run-loop.sh
+     ./run-loop.sh
 
 The server will start normally. If it crashes or shuts down, the script waits 5 seconds before automatically starting it again.
