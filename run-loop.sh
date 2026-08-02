@@ -12,11 +12,11 @@ cd "$SERVER_DIR" || exit 1
 
 while true; do
     if [ -f "wipe-requested.flag" ]; then
-        echo "[Lunoriy] Wipe angefordert - lösche alte Weltordner..."
+        echo "[Lunoriy] Wipe requested - deleting world folders..."
         for w in "${WORLDS[@]}"; do
             if [ -d "$w" ]; then
                 rm -rf -- "$w"
-                echo "[Lunoriy]  - $w gelöscht."
+                echo "[Lunoriy]  - $w removed."
             fi
         done
         rm -f -- "wipe-requested.flag"
@@ -24,19 +24,19 @@ while true; do
         FLAG_FILE="$SERVER_DIR/plugins/LunoriyWorldReset/world-started.flag"
         if [ -f "$FLAG_FILE" ]; then
             rm -f -- "$FLAG_FILE"
-            echo "[Lunoriy]  - world-started.flag zurückgesetzt."
+            echo "[Lunoriy]  - world-started.flag reset."
         fi
     fi
 
-    echo "[Lunoriy] Starte Server..."
+    echo "[Lunoriy] Starting server..."
     java $JAVA_ARGS -jar "$JAR_NAME" nogui
 
     if [ -f "stop-loop.flag" ]; then
-        echo "[Lunoriy] stop-loop.flag gefunden - beende Auto-Restart-Loop."
+        echo "[Lunoriy] stop-loop.flag found - exiting restart loop."
         rm -f -- "stop-loop.flag"
         break
     fi
 
-    echo "[Lunoriy] Server beendet, starte in 5 Sekunden neu..."
+    echo "[Lunoriy] Server stopped, restarting in 5 seconds..."
     sleep 5
 done
