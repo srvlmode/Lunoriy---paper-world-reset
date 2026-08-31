@@ -12,7 +12,7 @@ while [ -h "$SOURCE" ]; do
 done
 SERVER_DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
 
-JAR_NAME="paper.jar"
+JAR_NAME="server.jar"
 JAVA_ARGS="-Xms2G -Xmx4G"
 WORLDS=("world" "world_nether" "world_the_end")
 
