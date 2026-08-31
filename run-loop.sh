@@ -4,7 +4,6 @@
 # Universal version: works no matter where the "server" folder is located,
 # as long as this script sits directly inside that folder.
 
-# Resolve the real directory this script lives in (follows symlinks too)
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do
     DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
