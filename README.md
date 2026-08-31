@@ -11,11 +11,8 @@ Requirements
 
     Java installed
 
-    Paper server (paper.jar)
+    Paper server (server.jar)
 
-    Server directory:
-
-    ~/minecraft
 
 The following world directories will be deleted when a world reset is requested:
 
